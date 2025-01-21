@@ -8,16 +8,19 @@ const app = express();
 
 const port = 3000;
 app.use(bodyParse.json()) 
+
 mongoose
   .connect(
     "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductsAPI?retryWrites=true&w=majority&appName=ProductsAPI",
-    {
-      dbName: "PrdouctAPI",
-    }
+    { dbName: "ProductAPI" }
   )
-  .then((msg) => {
-    console.log("mongo connected ");
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
   });
+
 
 
   app.get("/", (req, res) => {
