@@ -1,0 +1,17 @@
+{
+  "name": "rest_api25",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "nodemon": "^3.1.9"
+  }
+}
