@@ -11,7 +11,7 @@ app.use(bodyParse.json())
 
 mongoose
   .connect(
-    "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductAPI?retryWrites=true&w=majority&appName=ProductsAPI",
+    "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductsAPI?retryWrites=true&w=majority&appName=ProductsAPI",
     )
   .then(() => {
     console.log("Connected to MongoDB");
