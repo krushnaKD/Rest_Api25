@@ -6,12 +6,12 @@ import { addProduct ,getProducts ,productbyID ,updateProductByid,DeletbyId} from
 
 const app = express();
 
-const port = 3000;
+const port = 3030;
 app.use(bodyParse.json()) 
 
 mongoose
   .connect(
-    "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductsAPI?retryWrites=true&w=majority&appName=ProductsAPI",
+    "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/?retryWrites=true&w=majority&appName=ProductsAPI",
     { dbName: "ProductAPI" }
   )
   .then(() => {
