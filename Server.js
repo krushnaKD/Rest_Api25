@@ -12,7 +12,11 @@ app.use(bodyParse.json())
 mongoose
   .connect(
     "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductsAPI?retryWrites=true&w=majority&appName=ProductsAPI",
-    { dbName: "ProductAPI" }
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      tlsAllowInvalidCertificates: true, // For testing purposes only
+    }
   )
   .then(() => {
     console.log("Connected to MongoDB");
