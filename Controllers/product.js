@@ -12,6 +12,8 @@ export const addProduct = async (req, res) => {
 export const getProducts = async (req, res) => {
   let products = await Product.find();  
   res.json({ message: "fetching all products", products });
+
+  
 };
 
 export const productbyID = async (req, res) => {
