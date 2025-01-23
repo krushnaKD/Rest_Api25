@@ -9,10 +9,10 @@ const app = express();
 const port = 3030;
 app.use(bodyParse.json()) 
 
+const Monogodb_URL = "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductAPI?retryWrites=true&w=majority&appName=ProductsAPI"
+
 mongoose
-  .connect(
-    "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductsAPI?retryWrites=true&w=majority&appName=ProductsAPI",
-    )
+  .connect(Monogodb_URL)
   .then(() => {
     console.log("Connected to MongoDB");
   })

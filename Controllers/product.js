@@ -10,7 +10,7 @@ export const addProduct = async (req, res) => {
 //get Products
 
 export const getProducts = async (req, res) => {
-  let products = await Product.find();
+  let products = await Product.find();  
   res.json({ message: "fetching all products", products });
 };
 
