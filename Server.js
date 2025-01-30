@@ -1,18 +1,24 @@
 import express from "express";
 import mongoose from "mongoose";
-import bodyParse from 'express'
-import { addProduct ,getProducts ,productbyID ,updateProductByid,DeletbyId} from "./Controllers/product.js";
-
+import bodyParse from "express";
+import {
+  addProduct,
+  getProducts,
+  productbyID,
+  updateProductByid,
+  DeletbyId,
+} from "./Controllers/product.js";
 
 const app = express();
 
 const port = 3030;
-app.use(bodyParse.json()) 
+app.use(bodyParse.json());
 
-const Monogodb_URL = "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductAPI?retryWrites=true&w=majority&appName=ProductsAPI"
+// const Monogodb_URL =
+//   "mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/ProductAPI?retryWrites=true&w=majority&appName=ProductsAPI";
 
 mongoose
-  .connect(Monogodb_URL)
+  .connect("mongodb+srv://ankadekrushna01:PbFeu4GuENNYFvpk@productsapi.nenqb.mongodb.net/")
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -20,28 +26,26 @@ mongoose
     console.error("Error connecting to MongoDB:", err.message);
   });
 
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 
+//products get
+app.get("/products", getProducts);
 
-  app.get("/", (req, res) => {
-    res.send("hello");
-  });
-
- //products get
- app.get('/products',getProducts) 
-
- //  products adding 
-app.post('/products/add',addProduct)
+//  products adding
+app.post("/products/add", addProduct);
 
 //get the data by id
 
-app.get('/products/:id',productbyID)
+app.get("/products/:id", productbyID);
 
 //update by id
-app.put("/products/:id",updateProductByid)
+app.put("/products/:id", updateProductByid);
 
 //Delete by id
 
-app.delete('/products/:id',DeletbyId)
+app.delete("/products/:id", DeletbyId);
 
 app.listen(port, () => {
   console.log(`server starts on ${port}`);
